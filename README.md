@@ -82,14 +82,25 @@ json
 
 logistics-tracking/
 ├── configserver/           # Spring Cloud Config Server
+
 ├── eurekaserver/           # Eureka Service Discovery
+
 ├── gatewayserver/          # API Gateway with Spring Security
+
 ├── tracking/               # Core service for tracking numbers
+
 │   ├── entity/             # MongoDB entity classes
+
 │   ├── repository/         # Spring Data MongoDB repositories
+
 │   ├── service/            # Business logic
+
 │   ├── controller/         # REST API controllers
+
 │   ├── model/              # DTOs for requests and responses
+
 │   ├── exception/          # Global exception handling
+
 ├── docker-compose.yml      # Docker Compose configuration
+
 └── grafana-prometheus/     # Monitoring stack configuration
