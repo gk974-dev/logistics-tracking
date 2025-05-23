@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TrackingRepository extends MongoRepository<TrackingRequest,String> {
 
+    boolean existsByTrackingId(String trackingId);
+
 }

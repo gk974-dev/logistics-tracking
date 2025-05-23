@@ -26,8 +26,12 @@ public class TrackingServiceImpl implements ITrackingService {
      */
     @Override
     public TrackingDto createTrackingId(TrackingRequest trackingRequest) {
+        String trackingId;
+        do {
+            trackingId = generateTrackingNumber();
+        } while (trackingRepository.existsByTrackingId(trackingId));
         OffsetDateTime dateTime = OffsetDateTime.parse(trackingRequest.getCreated_at().toString());
-        trackingRequest.setTracking_id(generateTrackingNumber());
+        trackingRequest.setTracking_id(trackingId);
         trackingRepository.save(trackingRequest);
         TrackingDto trackingDto = new TrackingDto();
         trackingDto.setTracking_id(trackingRequest.getTracking_id());
