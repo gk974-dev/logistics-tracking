@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "fe10d49f-3f0c-4ef6-bf9f-99a7381d9225",
+		"name": "Tracking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14673768"
+	},
+	"item": [
+		{
+			"name": "GetTrackingId",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
