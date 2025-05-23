@@ -54,15 +54,23 @@ GET api/next-tracking-number
 **Query Parameters:**
 
 1: Parameter	Format/Type	Description
+
 2: origin_country_id	ISO 3166-1 alpha-2	Country code of parcel origin
+
 3: destination_country_id	ISO 3166-1 alpha-2	Country code of parcel destination
+
 4: weight	Decimal (up to 3 decimal places)	Parcel weight in kilograms
+
 5: created_at	RFC 3339 timestamp	Timestamp of parcel creation
+
 6: customer_id	UUID	Unique identifier for the customer
+
 7: customer_name	String	Name of the customer
+
 8: customer_slug	kebab-case string	Slugified customer name (e.g., example-corp)
 
 **Response Format:**
+
 json
 {
   "tracking_number": "AB123456789XYZ",
