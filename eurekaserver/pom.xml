@@ -12,7 +12,7 @@
 	<artifactId>eurekaserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>eurekaserver</name>
-	<description>Service Discovery agent for Eazy Bank microservices</description>
+	<description>Service Discovery agent for Logistics Tracking microservices</description>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

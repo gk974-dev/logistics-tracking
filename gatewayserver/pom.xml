@@ -12,7 +12,7 @@
 	<artifactId>gatewayserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>gatewayserver</name>
-	<description>Edge Server for Eazy Bank microservices</description>
+	<description>Edge Server for Logistics tracking microservices</description>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -78,7 +78,7 @@
 				<version>${jib.version}</version>
 				<configuration>
 					<to>
-						<image>eazybytes/${project.artifactId}:${image.tag}</image>
+						<image>hemanth974/${project.artifactId}:${image.tag}</image>
 					</to>
 				</configuration>
 			</plugin>

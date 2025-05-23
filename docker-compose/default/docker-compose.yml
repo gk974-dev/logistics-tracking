@@ -43,7 +43,7 @@ services:
       timeout: 5s
       retries: 5
     networks: &loki-dns
-      eazybank:
+      logistics:
         aliases:
           - loki
 
@@ -242,7 +242,7 @@ services:
       service: network-deploy-service
 
   configserver:
-    image: "hemanth974/configserver:s13"
+    image: "hemanth974/configserver:s20"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -259,7 +259,7 @@ services:
       OTEL_SERVICE_NAME: "configserver"
 
   eurekaserver:
-    image: "hemanth974/eurekaserver:s13"
+    image: "hemanth974/eurekaserver:s20"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -280,8 +280,8 @@ services:
       OTEL_SERVICE_NAME: "eurekaserver"
 
   accounts:
-    image: "hemanth974/accounts:s13"
-    container_name: accounts-ms
+    image: "hemanth974/tracking:s20"
+    container_name: tracking-ms
     depends_on:
       rabbitmq:
         condition: service_healthy
@@ -296,57 +296,15 @@ services:
       retries: 20
       start_period: 10s
     environment:
-      SPRING_APPLICATION_NAME: "accounts"
-      OTEL_SERVICE_NAME: "accounts"
+      SPRING_APPLICATION_NAME: "tracking"
+      OTEL_SERVICE_NAME: "tracking"
       SPRING_RABBITMQ_HOST: "rabbit"
     extends:
       file: common-config.yml
       service: microservice-eureka-config
 
-  loans:
-    image: "hemanth974/loans:s13"
-    container_name: loans-ms
-    depends_on:
-      configserver:
-        condition: service_healthy
-      eurekaserver:
-        condition: service_healthy
-    healthcheck:
-      test: "curl --fail --silent localhost:8090/actuator/health/readiness | grep UP || exit 1"
-      interval: 20s
-      timeout: 5s
-      retries: 20
-      start_period: 10s
-    environment:
-      SPRING_APPLICATION_NAME: "loans"
-      OTEL_SERVICE_NAME: "loans"
-    extends:
-      file: common-config.yml
-      service: microservice-eureka-config
-
-  cards:
-    image: "hemanth974/cards:s13"
-    container_name: cards-ms
-    depends_on:
-      configserver:
-        condition: service_healthy
-      eurekaserver:
-        condition: service_healthy
-    healthcheck:
-      test: "curl --fail --silent localhost:9000/actuator/health/readiness | grep UP || exit 1"
-      interval: 20s
-      timeout: 5s
-      retries: 20
-      start_period: 10s
-    environment:
-      SPRING_APPLICATION_NAME: "cards"
-      OTEL_SERVICE_NAME: "cards"
-    extends:
-      file: common-config.yml
-      service: microservice-eureka-config
-
   gatewayserver:
-    image: "hemanth974/gatewayserver:s13"
+    image: "hemanth974/gatewayserver:s20"
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"
@@ -365,7 +323,7 @@ services:
       file: common-config.yml
       service: microservice-eureka-config
   message:
-    image: "hemanth974/message:s13"
+    image: "hemanth974/message:s20"
     container_name: message-ms
     depends_on:
       rabbit:
@@ -376,5 +334,5 @@ services:
       file: common-config.yml
       service: network-deploy-service
 networks:
-  eazybank:
+  logistics:
     driver: "bridge"

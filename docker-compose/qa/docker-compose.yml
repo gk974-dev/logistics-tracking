@@ -43,7 +43,7 @@ services:
       timeout: 5s
       retries: 5
     networks: &loki-dns
-      eazybank:
+      logistics:
         aliases:
           - loki
 
@@ -334,5 +334,5 @@ services:
       file: common-config.yml
       service: network-deploy-service
 networks:
-  eazybank:
+  logistics:
     driver: "bridge"
