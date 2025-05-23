@@ -81,6 +81,7 @@ json
 **Project Structure**
 
 logistics-tracking/
+
 ├── configserver/           # Spring Cloud Config Server
 
 ├── eurekaserver/           # Eureka Service Discovery
