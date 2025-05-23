@@ -20,19 +20,31 @@ Config Server: Centralized configuration management across all services.
 
 **Technology Stack**
 
-1: Java 17\n
-2: Spring Boot\n
-3: Spring Cloud (Gateway, Eureka, Config)\n
-4: MongoDB\n
-5: Docker + Docker Compose\n
-6: Grafana + Prometheus\n
-7: Spring Security\n
-8: Scalability and Performance\n
-9: Engineered to handle a high volume of concurrent requests.\n
-10: Built with scalability in mind, supporting horizontal scaling across microservices.\n
-11: Monitoring and Logging\n
-12: Integrated with Prometheus for metrics collection.\n
-13: Uses Grafana for real-time visualization and monitoring dashboards.\n
+1: Java 17
+
+2: Spring Boot
+
+3: Spring Cloud (Gateway, Eureka, Config)
+
+4: MongoDB
+
+5: Docker + Docker Compose
+
+6: Grafana + Prometheus
+
+7: Spring Security
+
+8: Scalability and Performance
+
+9: Engineered to handle a high volume of concurrent requests.
+
+10: Built with scalability in mind, supporting horizontal scaling across microservices.
+
+11: Monitoring and Logging
+
+12: Integrated with Prometheus for metrics collection.
+
+13: Uses Grafana for real-time visualization and monitoring dashboards.
 
 **API Specification**
 
